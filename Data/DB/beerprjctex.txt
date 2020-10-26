@@ -1,0 +1,20 @@
+INSERT INTO bieres ('nombiere','pourcentage','Brasserie','prix')
+VALUES
+('Tripel Karmeliet',"8.4",'Brasserie Bosteels',"2.10"),
+('Orval',"6.2","Abbaye d'Orval","2.80"),
+('Chimay Bleue',"9",' Notre Dame de Scourmont ',"2.50"),
+('Westmalle Triple',"9.5",'Abbaye de Westmalle',"2.40"),
+('Carolus Ambrio',"8",'Brasserie Het Anker',"2.30"),
+('Rodenbach Grand Cru',"4.10",'Brasserie Rodenbach',"2.50"),
+('Gulden Draak',"10.5",'Brasserie Van Steenberge',"2.30"),
+('Duvel',"8.50",'Brasserie Duvel Moortgat',"2.20"),
+('Troubadour Westkust',"9.20",'Brasserie The Musketeers',"2.40"),
+('St Feuillien Grand cru',"9.50",'Brasserie St-Feuillien',"2.50");
+
+
+5)
+ 
+- SELECT * FROM bieres order by nombiere ;
+
+-SELECT * FROM `bieres` ORDER BY `prix` ;
+

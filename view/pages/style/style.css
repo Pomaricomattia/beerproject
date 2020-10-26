@@ -11,13 +11,19 @@ body {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    
+    list-style-type:none ;
+    max-height: 180px;
 }
 .navigation a {
     list-style-type:none ;
     text-decoration:none;
     color: black; 
     font-size: 50px;
+    max-height: 180px;
+
+}
+.navigation a:hover {
+    color: gold;
 }
 .bouteille {
     border: 1px solid #C09628;
@@ -90,4 +96,24 @@ body {
     background-color: #DCCFA5;
     width: 100%;
     height: 200px;
+}
+
+@media screen and (max-width:950px) {
+    body {
+        display: block;
+        font-size: 35px;
+    }
+    .barrenav {
+            display: flex;
+            flex-flow: column wrap ;
+            padding-top: 28%;
+        }
+        
+        .navigation a {
+            display: block;
+            color: #000;
+            padding: 8px 0 8px 16px;
+            text-decoration: none;
+        }
+    }
 }

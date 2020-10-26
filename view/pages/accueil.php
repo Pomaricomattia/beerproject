@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="style/style.css">
     <title>Bienvenue</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
     <li class="navigation"><a href="Presentation.php">Présentation</a></li>
     <div class="bouteille">
     <div class="animation">
-    <img class="animbouteille" src="../img/bottle3d/tmtcbeer.png" alt="animbeer" />
+    <img class="animbouteille" src="../../Data/img/bottle3d/tmtcbeer.png" alt="animbeer" />
 
     </div>
 </div>

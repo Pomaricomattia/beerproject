@@ -1,19 +1,17 @@
 <?php
 
-session_start();
+
+require_once "config.php";
 
 
-$db = mysqli_connect("127.0.0.1","root","","projectbeer","3306") OR die("La connection à la base de données a echouée");
-mysqli_set_charset($db, "utf8");
+$db = mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME,DB_PORT) OR die("La connection à la base de données a echouée");
+mysqli_set_charset($db, "utf8"); 
+
+
 
 if (isset($_GET['page'])) {
-    $page = $_GET["page"];
-
-
-switch ($page) {
-    case "Accueil":
-        require_once "view/pages/accueil.php";
-    break;
+    
+switch ($_GET['page']){
     case "Contact":
         require_once "view/pages/Contact.php";
     break;
@@ -23,10 +21,15 @@ switch ($page) {
     case "Catalogue":
         require_once "view/pages/Catalogue.php";
     break;
+    case "crudadmin":
+        require_once "view/pages/crudadmin.php";
+    break;
     default:
-        require_once "view/pages/accueil.php";
-    
+        require_once "view/pages/accueil.php";  
 }
+}else {
+     require_once "view/pages/accueil.php";
 }
+
 ?>
 

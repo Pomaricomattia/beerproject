@@ -1,11 +1,10 @@
 <?php
 require_once ('../../config.php') ;
 
-if ((isset($_POST['nombiere'])) &&
-(isset($_POST['pourcentage'])) &&
-(isset($_POST['Brasserie'])) &&
-(isset($_POST['prix'])) &&
-(isset($_POST['type'])) ) {
+$db = mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME,DB_PORT) OR die("La connection à la base de données a echouée");
+mysqli_set_charset($db, "utf8");
+
+
 
     if((!empty($_POST['nombiere'])) &&
     (!empty($_POST['pourcentage'])) &&
@@ -13,17 +12,17 @@ if ((isset($_POST['nombiere'])) &&
     (!empty($_POST['prix'])) &&
     (!empty($_POST['type']))  ) {
 
-        function insertbiere($database,$nombiere,$pourcentage,$brasserie,$prix,$idStyle) {
+        function insertbiere($db,$nombiere,$pourcentage,$brasserie,$prix,$idStyle) {
             $sql = "INSERT INTO bieres(nombiere,pourcentage,Brasserie,prix,Style_id) VALUES (''$_POST[nombiere]',''$_POST[pourcentage]',''$_POST[brasserie]',''$_POST[prix]',''$_POST[idStyle]')";
-            $result = mysqli_query($database,$sql);
-            return $result ? "La bière à été ajouté" : "L'insertion a échouée:".mysqli_error($database) ;
+            $result = mysqli_query($db,$sql);
+            return $result ? "La bière à été ajouté" : "L'insertion a échouée:".mysqli_error($db) ;
         }
 
     }
    
 
 
-}
+
 
 
 
@@ -36,16 +35,19 @@ if ((isset($_POST['nombiere'])) &&
     <title>Document</title>
 </head>
 <body>
+<h3> Ajouter un article </h3>
 <form action="" method="post">
 
-Bière: <input type="text" name="nombiere" />
-Pourcentage: <input type="number" name="pourcentage" />
-Brasserie: <input type="text" name="Brasserie" />
-Prix : <input type="number" name="prix" />
-type <input type="text" name="type" />
- 
+Bière: <input class="article" type="text" name="nombiere" />
+Pourcentage: <input class="pourcentage" type="number" name="pourcentage" />
+Brasserie: <input class="brasserie" type="text" name="Brasserie" />
+Prix : <input class="prix" type="number" name="prix" />
+type <input class="typebiere"type="text" name="type" />
+<h3> Ajouter une image </h3>
+<input name="nomdelimage" type="file" class="imageupload" placeholder="Votre image" >
 <input type="submit" />
 </form>
+
 
 </body>
 </html>

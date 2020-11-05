@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="style/style.css">
+    <link type="text/css" rel="stylesheet" href="view/pages/style/style.css">
     <title>Bienvenue</title>
 </head>
 <body>
     
     <nav class="barrenav">
-    <li class="navigation"><a href="accueil.php">Accueil</a></li>
-    <li class="navigation"><a href="Presentation.php">Présentation</a></li>
+    <li class="navigation"><a href="view/pages/accueil.php">Accueil</a></li>
+    <li class="navigation"><a href="view/pages/Presentation.php">Présentation</a></li>
     <div class="bouteille">
     <div class="animation">
-    <img class="animbouteille" src="../../Data/img/bottle3d/tmtcbeer.png" alt="animbeer" />
+    <img class="animbouteille" src="Data/img/bottle3d/tmtcbeer.png" alt="animbeer" />
 
     </div>
 </div>
 </div>
-    <li class="navigation"><a href="Catalogue.php">Catalogue</a></li>
-    <li class="navigation"><a href="Contact.php">Contacts</a></li>
+    <li class="navigation"><a href="view/pages/Catalogue.php">Catalogue</a></li>
+    <li class="navigation"><a href="view/pages/Contact.php">Contacts</a></li>
    </nav>
     <div class="presentationsite">
         <h1>Bienvenue sur beerent.be</h1>

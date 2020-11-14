@@ -3,7 +3,8 @@ $db = mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME,DB_PORT) OR die("La connecti
 mysqli_set_charset($db, "utf8");
 
 function getAllUsers(){
-
+    $sql = "SELECT * FROM admin";
+    
 } 
 function readUser($id){
 
@@ -23,7 +24,7 @@ function deleteUser($id){
 // Crud catalogue
 function insertbiere($database,$nombiere,$pourcentage,$brasserie,$prix,$idStyle) {
     $sql = "INSERT INTO bieres(nombiere,pourcentage,Brasserie,prix,Style_id) VALUES ('$nombiere','$pourcentage','$brasserie','$prix','$idStyle')";
-    $result = mysqli_query($db,$sql);
+    $result = mysqli_query($database,$sql);
     return $result ? "La bière à été ajouté" : "L'insertion a échouée:".mysqli_error($database) ;
 }
 function updatebiere(){

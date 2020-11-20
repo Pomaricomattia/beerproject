@@ -1,35 +1,24 @@
 <?php
 
-
+//dépendances
 require_once "config.php";
+require_once "model/connectDBModel.php";
 
 
-$db = mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME,DB_PORT) OR die("La connection à la base de données a echouée");
-mysqli_set_charset($db, "utf8"); 
+$db = connectDBModel();
 
-
-
-if (isset($_GET['page'])) {
+if(!$db){
+    include "view/pages/errorConnectView.php";
     
-switch ($_GET['page']){
-    case "Contact":
-        require_once "view/pages/Contact.php";
-    break;
-    case "Presentation":
-        require_once "view/pages/Presentation.php";
-    break;
-    case "Catalogue":
-        require_once "view/pages/Catalogue.php";
-    break;
-    case "crudadmin":
-        require_once "view/pages/crudadmin.php";
-    break;
-    default:
-        require_once "view/pages/accueil.php";  
+    die();
 }
-}else {
-     require_once "view/pages/accueil.php";
-}
+var_dump($db);
+
+
+//loadingcontrolleur frontal
+
+require_once "controller/publiccontroller.php";
 
 ?>
+
 

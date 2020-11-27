@@ -24,7 +24,10 @@
     <div class="presentationsite">
         <h1>Bienvenue sur beerent.be</h1>
         <p>Ici vous trouverez Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam earum explicabo porro atque natus nisi illo voluptatum cumque dicta maiores sequi aut, ab eum nihil at facere molestiae eos ipsum.</p>
-    </div>
+   <li>
+        <a class="connexion" href="?p=connect">Connexion</a>
+    </li>
+     </div>
     <p class="textpres">bière les plus recherchée</p>
     <div class="bestbeer">
         
@@ -62,7 +65,7 @@
         </div>
         </div>
     </div>
-
+    
 
 
 

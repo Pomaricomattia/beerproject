@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //dépendances
 require_once "config.php";
 require_once "model/connectDBModel.php";
@@ -8,11 +8,19 @@ require_once "model/connectDBModel.php";
 $db = connectDBModel();
 
 if(!$db){
-    include "view/pages/errorConnectView.php";
+    include "view/pages/errorConnectView.php";           
     
     die();
 }
-var_dump($db);
+
+
+
+if(isset($_SESSION['identifiant'])&&$_SESSION['identifiant']==session_id()){
+    
+    require_once "controller/adminController.php";
+    
+}
+
 
 
 //loadingcontrolleur frontal

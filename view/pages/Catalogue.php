@@ -1,22 +1,5 @@
 <?php
 
-    if((!empty($_POST['nombiere'])) &&
-    (!empty($_POST['pourcentage'])) &&
-    (!empty($_POST['Brasserie'])) &&
-    (!empty($_POST['prix'])) &&
-    (!empty($_POST['type']))  ) {
-
-        function insertbiere($db,$nombiere,$pourcentage,$brasserie,$prix,$idStyle) {
-            $sql = "INSERT INTO bieres(nombiere,pourcentage,Brasserie,prix,Style_id) VALUES (''$_POST[nombiere]',''$_POST[pourcentage]',''$_POST[brasserie]',''$_POST[prix]',''$_POST[idStyle]')";
-            $result = mysqli_query($db,$sql);
-            return $result ? "La bière à été ajouté" : "L'insertion a échouée:".mysqli_error($db) ;
-        }
-
-    }
-   
-
-
-
 
 
 
@@ -26,6 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="view/pages/style/cssCatalogue.css" rel="stylesheet"  type="text/css" />
     <title>Document</title>
 </head>
 <body>
@@ -37,17 +21,21 @@ if(isset($erreur)):
 <?php 
 else:
 ?>
-<p class="nbrArticle"> Nombre d'article: <?=count($allbiere) ?></p>
+<p class="nbrArticle"> Nombre d'article: <?=count($allbiere)?></p>
 <p class="Article"> Les article</p>
 <?php 
 foreach($allbiere as $item):
     ?>
+    <div class="cadrebière">
+        <div class="partieimg">
+    </div>
+    <div class="partietext">
     <h3> <?=$item["nombiere"] ?></h3>
     <p> Pourcentage: <?=$item ["pourcentage"]?></p>
     <p>Brasserie : <?=$item ["Brasserie"]?></p>
     <p>Prix : <?=$item ["prix"]?></p>
-    
-
+    </div>
+    </div>
     <h5></h5>
 <?php
 endforeach;
